@@ -17,9 +17,13 @@ class DatabaseSeeder extends Seeder
          \App\Models\User::factory(10)->create();
 
          \App\Models\User::factory()->create([
-             'name' => 'Luber Zamasi',
-             'email' => 'lubersius.zamasi@mail.ukrim.ac.id',
+             'name' => 'lubersius zamasi',
+             'email' => 'luberzamasi4@gmail.com',
              'password' => bcrypt('luber123'),
+         ]);
+
+         DB::table('kategori')->insert([
+            'nama_kategori' => 'Nasional'
          ]);
     }
 }
