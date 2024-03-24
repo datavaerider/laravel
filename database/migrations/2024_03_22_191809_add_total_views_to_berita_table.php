@@ -13,20 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kategori', function (Blueprint $table) {
-            $table->integer('id_kategori')->autoIncrement();
-            $table->string('nama_kategori');
-            $table->timestamps();
+        Schema::table('berita', function (Blueprint $table) {
+            $table->integer('total_views')->default(0);
         });
     }
 
     /**
      * Reverse the migrations.
-     *xs
+     *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('kategori');
+        Schema::table('berita', function (Blueprint $table) {
+            $table->dropColumn('total_views');
+        });
     }
 };
